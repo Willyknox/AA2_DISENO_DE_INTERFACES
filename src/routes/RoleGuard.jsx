@@ -3,10 +3,7 @@ import { Navigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
 /**
- * ROLE GUARD (Control de Acceso basado en Roles - RBAC)
- * 
- * Implementa el "Control de acceso basado en roles que impida el acceso no autorizado".
- * Verifica que el usuario tenga los privilegios necesarios antes de renderizar la página.
+ * Componente para restringir el acceso a rutas según el rol de usuario
  */
 const RoleGuard = ({ children, allowedRoles }) => {
   const { user, loading } = useAuth();

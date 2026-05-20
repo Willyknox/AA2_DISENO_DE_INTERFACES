@@ -3,10 +3,7 @@ import { Navigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
 /**
- * PROTECTED ROUTE (Guardián de Autenticación)
- * 
- * Implementa la "Protección de rutas" exigida.
- * Impide el acceso a usuarios no logueados redirigiéndolos al login.
+ * Componente que protege las rutas para usuarios no autenticados
  */
 const ProtectedRoute = ({ children }) => {
   const { isAuthenticated, loading } = useAuth();
@@ -17,11 +14,7 @@ const ProtectedRoute = ({ children }) => {
   }
 
   if (!isAuthenticated) {
-    /**
-     * Gestión de Redirecciones:
-     * Guardamos la ubicación actual en el estado del router. Tras un login exitoso,
-     * la aplicación podrá devolver al usuario exactamente a donde intentaba ir.
-     */
+    // Redirige al login guardando la ruta de origen para poder volver tras autenticarse
     return <Navigate to="/login" state={{ from: location }} replace />;
   }
 

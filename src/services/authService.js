@@ -1,21 +1,20 @@
-// Servicio de autenticación simulado.
-// En una aplicación real, estas funciones llamarían a endpoints del backend.
+// Servicio de autenticación local con soporte para tokens simulados (JWT)
+// En una aplicación de producción, estas funciones llamarían a los endpoints del backend.
 
-// Pequeña espera artificial para practicar estados de carga en la interfaz.
+// Espera simulada para visualizar estados de carga (spinner) en la interfaz.
 /**
- * SERVICIO DE AUTENTICACIÓN (JWT SIMULADO)
+ * SERVICIO DE AUTENTICACIÓN
  * 
- * Este servicio implementa la lógica de autenticación basada en tokens JWT.
- * Cumple con el requerimiento de: "Integrar un sistema de autenticación basado en JWT".
+ * Gestiona el inicio de sesión, registro y verificación de sesiones activas.
  * 
  * Lógica:
- * 1. Simula la verificación de credenciales contra una base de datos.
- * 2. Genera un token que empaqueta la identidad y el rol del usuario.
- * 3. Permite la validación del token para restaurar sesiones persistentes.
+ * 1. Verificación de credenciales contra el listado de usuarios local.
+ * 2. Generación de un token estructurado con la identidad y rol del usuario.
+ * 3. Restauración de sesión persistente mediante validación del token en localStorage.
  */
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
-// Base de datos de usuarios simulada. Solo se usa en frontend para este proyecto educativo.
+// Base de datos de usuarios simulada para desarrollo.
 const mockUsers = [
   { id: 1, email: 'admin@bikeshop.com', password: 'password123', name: 'Admin User', role: 'admin' },
   { id: 2, email: 'user@bikeshop.com', password: 'password123', name: 'Regular User', role: 'user' }
@@ -30,16 +29,10 @@ export const authService = {
       throw new Error('Credenciales inválidas');
     }
 
-    // Nunca devolvemos la contraseña a la UI, aunque aquí sea un mock.
     const { password, ...userWithoutPassword } = user;
     
     return {
       user: userWithoutPassword,
-      /**
-       * Generación del Token JWT:
-       * El token incluye información codificada (id y rol). Esto permite al frontend
-       * tomar decisiones de autorización (RBAC) sin consultar al servidor en cada paso.
-       */
       token: `fake-jwt-token-for-${user.id}-role-${user.role}`
     };
   },
@@ -70,7 +63,7 @@ export const authService = {
     if (!token || !token.startsWith('fake-jwt-token-for-')) {
       throw new Error('Token inválido');
     }
-    // Simulación de decodificación de token: extraemos el ID del string simulado
+    // Extraer información del usuario desde el formato de token simulado
     const parts = token.split('-');
     const id = parseInt(parts[4]);
     const user = mockUsers.find(u => u.id === id);

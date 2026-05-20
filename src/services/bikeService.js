@@ -13,7 +13,6 @@ export const bikeService = {
 
   async getBikeById(id) {
     try {
-      // Template literal: inserta el id en la URL, por ejemplo /bikes/5.
       return await apiClient.get(`/bikes/${id}`);
     } catch (error) {
       throw new Error(error.message || 'Error al obtener la bicicleta');

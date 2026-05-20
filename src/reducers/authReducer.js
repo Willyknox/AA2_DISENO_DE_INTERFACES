@@ -1,10 +1,8 @@
 /**
- * AUTH REDUCER
+ * Reducer de Autenticación
  * 
- * Gestiona las transiciones de estado de la autenticación.
- * Cumple con la gestión de "estados durante el proceso de autenticación".
+ * Gestiona el estado global de la sesión del usuario (carga, éxito, errores y logout).
  */
-// Lee el token de forma segura: en tests o renderizados fuera del navegador puede no existir window.
 const getToken = () => {
   try {
     return (typeof window !== 'undefined' && window.localStorage && typeof window.localStorage.getItem === 'function') 
@@ -15,7 +13,6 @@ const getToken = () => {
   }
 };
 
-// Estado inicial de autenticación: arranca consultando si ya había token guardado.
 export const initialState = {
   user: null,
   token: getToken(),
@@ -24,8 +21,6 @@ export const initialState = {
   error: null,
 };
 
-// Un reducer recibe el estado actual y una acción, y devuelve el siguiente estado.
-// Importante: no se muta el objeto original; se crea una copia con ...state.
 export const authReducer = (state, action) => {
   switch (action.type) {
     case 'LOGIN_START':
@@ -69,7 +64,6 @@ export const authReducer = (state, action) => {
         isAuthenticated: true,
       };
     default:
-      // Si llega una acción desconocida, devolvemos el estado sin cambios.
       return state;
   }
 };

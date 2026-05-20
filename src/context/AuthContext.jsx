@@ -3,30 +3,19 @@ import { authReducer, initialState } from '../reducers/authReducer';
 import { authService } from '../services/authService';
 
 /**
- * CONTEXTO DE AUTENTICACIÓN
- * 
- * Centraliza el estado de seguridad de la aplicación.
- * Gestiona "redirecciones y estados durante el proceso de autenticación".
+ * Contexto de Autenticación
  */
 export const AuthContext = createContext();
 
-// Hook personalizado: así los componentes pueden escribir useAuth() en vez de useContext(AuthContext).
+// Hook para consumir el contexto de autenticación
 export const useAuth = () => {
   return useContext(AuthContext);
 };
 
 export const AuthProvider = ({ children }) => {
-  /**
-   * useReducer: Gestiona la complejidad de los estados (Cargando, Error, Éxito).
-   * Proporciona una transición de estados predecible y fácil de testear.
-   */
   const [state, dispatch] = useReducer(authReducer, initialState);
 
-  /**
-   * Persistencia de Sesión:
-   * Al montar la app, se busca el token en localStorage. Si existe, se valida 
-   * con el servicio para restaurar la sesión automáticamente (UX fluida).
-   */
+  // Restaurar la sesión al montar la aplicación si existe un token guardado
   useEffect(() => {
     const restoreSession = async () => {
       if (state.token) {
@@ -43,11 +32,9 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const login = async (credentials) => {
-    // Avisamos al reducer de que empieza una operación asíncrona: la UI puede mostrar “cargando”.
     dispatch({ type: 'LOGIN_START' });
     try {
       const response = await authService.login(credentials);
-      // localStorage persiste el token aunque el usuario recargue el navegador.
       localStorage.setItem('jwt_token', response.token);
       dispatch({ type: 'LOGIN_SUCCESS', payload: response });
       return response;
@@ -71,13 +58,11 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = () => {
-    // Para cerrar sesión hay que borrar tanto el token persistido como el estado de React.
     localStorage.removeItem('jwt_token');
     dispatch({ type: 'LOGOUT' });
   };
 
   return (
-    // value expone estado + acciones. Cualquier hijo envuelto por AuthProvider puede consumirlo.
     <AuthContext.Provider value={{ ...state, login, register, logout, dispatch }}>
       {children}
     </AuthContext.Provider>
