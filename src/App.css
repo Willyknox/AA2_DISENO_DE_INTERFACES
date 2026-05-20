@@ -1,0 +1,173 @@
+/* Variables CSS globales: facilitan cambiar colores del proyecto desde un solo sitio. */
+:root {
+  --primary-color: #0d6efd;
+  --secondary-color: #6c757d;
+  --bg-light: #f8f9fa;
+  --text-dark: #212529;
+}
+
+/* Estilos base de la página. Bootstrap aporta mucho, aquí ajustamos la identidad visual propia. */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+}
+
+/* Layout vertical: header arriba, footer abajo y main ocupando el espacio disponible. */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+/* Gestalt: Similitud y Proximidad en las tarjetas.
+   Todas comparten estilo para que el usuario entienda que pertenecen a la misma categoría. */
+.bike-card {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Microinteracción: al pasar el ratón la tarjeta “sube”, indicando que es interactiva. */
+.bike-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* object-fit recorta la imagen sin deformarla, manteniendo tarjetas de altura uniforme. */
+.bike-card .card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.bike-card .badge {
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+/* Hero: gradiente y espacio vertical para dar jerarquía a la portada. */
+.hero-section {
+  background: linear-gradient(135deg, #0d6efd 0%, #0043a8 100%);
+  color: white;
+  padding: 5rem 0;
+  border-radius: 0 0 2rem 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Footer oscuro para cerrar visualmente la página. */
+.footer {
+  background-color: #212529;
+  color: white;
+  padding: 2rem 0;
+  margin-top: auto;
+}
+
+/* --- ESTILOS PREMIUM PARA DASHBOARDS --- */
+
+/* Gradientes premium para las StatsCard */
+.bg-gradient-primary {
+  background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%) !important;
+}
+
+.bg-gradient-success {
+  background: linear-gradient(135deg, #198754 0%, #157347 100%) !important;
+}
+
+.bg-gradient-danger {
+  background: linear-gradient(135deg, #dc3545 0%, #b02a37 100%) !important;
+}
+
+.bg-gradient-warning {
+  background: linear-gradient(135deg, #ffc107 0%, #e0a800 100%) !important;
+  color: #212529 !important;
+}
+
+.bg-gradient-warning .text-white-50 {
+  color: rgba(33, 37, 41, 0.6) !important;
+}
+
+.bg-gradient-warning h3, .bg-gradient-warning p {
+  color: #212529 !important;
+}
+
+.bg-gradient-info {
+  background: linear-gradient(135deg, #0dcaf0 0%, #0bacbe 100%) !important;
+  color: #212529 !important;
+}
+
+.bg-gradient-info .text-white-50 {
+  color: rgba(33, 37, 41, 0.6) !important;
+}
+
+.bg-gradient-info h3, .bg-gradient-info p {
+  color: #212529 !important;
+}
+
+/* Microinteracciones para StatsCard */
+.stats-card-interactive {
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stats-card-interactive:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Animación de entrada suave */
+.dashboard-fade-in {
+  animation: dashboardFadeIn 0.5s ease-out forwards;
+}
+
+@keyframes dashboardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Contenedores de Filtros en Dashboard */
+.dashboard-filters-container {
+  background-color: #ffffff;
+  border-radius: 12px;
+}
+
+.dashboard-filters-container label {
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.tracking-wider {
+  letter-spacing: 0.06em;
+}
+
+.bg-opacity-20 {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Estilización adicional de la DataTable de administración */
+.table-responsive {
+  border-radius: 0 0 12px 12px;
+}
+
+.pagination .page-link {
+  color: var(--primary-color);
+  border: 1px solid #dee2e6;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+

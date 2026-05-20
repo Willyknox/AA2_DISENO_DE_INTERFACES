@@ -1,0 +1,7 @@
+/* Reset mínimo: elimina márgenes/paddings por defecto del navegador.
+   Bootstrap se encarga de la mayoría de estilos; aquí solo normalizamos la base. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Hace que width incluya padding y border: más fácil calcular tamaños. */
+}

@@ -1,0 +1,285 @@
+{
+  "brands": [
+    {
+      "id": "1",
+      "name": "Trek"
+    },
+    {
+      "id": "2",
+      "name": "Specialized"
+    },
+    {
+      "id": "3",
+      "name": "Giant"
+    },
+    {
+      "id": "4",
+      "name": "Canyon"
+    },
+    {
+      "id": "5",
+      "name": "Scott"
+    }
+  ],
+  "bikes": [
+    {
+      "id": "1",
+      "model": "Domane SL 5",
+      "brandId": "1",
+      "brand": "Trek",
+      "price": 3299,
+      "type": "road",
+      "wheelSize": 28,
+      "ebike": false,
+      "year": 2025,
+      "description": "Bicicleta de carretera con cuadro de carbono OCLV, ideal para largas distancias y máxima comodidad en rutas pavimentadas.",
+      "image": "/images/road.png"
+    },
+    {
+      "id": "2",
+      "model": "Tarmac SL8",
+      "brandId": "2",
+      "brand": "Specialized",
+      "price": 6500,
+      "type": "road",
+      "wheelSize": 28,
+      "ebike": false,
+      "year": 2025,
+      "description": "La bicicleta de carretera más rápida que jamás hayamos creado. Aerodinámica excepcional y peso mínimo.",
+      "image": "/images/road.png"
+    },
+    {
+      "id": "3",
+      "model": "Trance X Advanced",
+      "brandId": "3",
+      "brand": "Giant",
+      "price": 4999,
+      "type": "mountain",
+      "wheelSize": 29,
+      "ebike": false,
+      "year": 2024,
+      "description": "Doble suspensión preparada para los senderos más técnicos con un cuadro de carbono Advanced-grade.",
+      "image": "/images/mountain.png"
+    },
+    {
+      "id": "4",
+      "model": "Spectral:ON CF 8",
+      "brandId": "4",
+      "brand": "Canyon",
+      "price": 5999,
+      "type": "mountain",
+      "wheelSize": 29,
+      "ebike": true,
+      "year": 2024,
+      "description": "La e-MTB definitiva. Motor potente, batería de gran capacidad y cuadro de carbono para máxima diversión.",
+      "image": "/images/mountain.png"
+    },
+    {
+      "id": "5",
+      "model": "Spark RC World Cup",
+      "brandId": "5",
+      "brand": "Scott",
+      "price": 7999,
+      "type": "mountain",
+      "wheelSize": 29,
+      "ebike": false,
+      "year": 2025,
+      "description": "Una auténtica máquina de XC. Suspensión integrada y el cuadro de carbono más ligero de su clase.",
+      "image": "/images/mountain.png"
+    },
+    {
+      "id": "6",
+      "model": "Turbo Vado 4.0",
+      "brandId": "2",
+      "brand": "Specialized",
+      "price": 4000,
+      "type": "city",
+      "wheelSize": 28,
+      "ebike": true,
+      "year": 2024,
+      "description": "Bicicleta eléctrica de ciudad para desplazamientos diarios. Rápida, suave y fácil de usar.",
+      "image": "/images/city.png"
+    },
+    {
+      "id": "7",
+      "model": "Grizl CF SL 7",
+      "brandId": "4",
+      "brand": "Canyon",
+      "price": 2499,
+      "type": "gravel",
+      "wheelSize": 28,
+      "ebike": false,
+      "year": 2024,
+      "description": "Tu compañera perfecta para la aventura gravel. Rápida en asfalto, capaz en caminos de tierra.",
+      "image": "/images/gravel.png"
+    },
+    {
+      "id": "8",
+      "model": "FX Sport 4",
+      "brandId": "1",
+      "brand": "Trek",
+      "price": 1799,
+      "type": "fitness",
+      "wheelSize": 28,
+      "ebike": false,
+      "year": 2025,
+      "description": "Bicicleta de fitness de carbono ligera y rápida, ideal para mantenerse en forma de manera divertida.",
+      "image": "/images/city.png"
+    },
+    {
+      "id": "9",
+      "model": "Émonda SLR 7",
+      "brandId": "1",
+      "brand": "Trek",
+      "price": 8499,
+      "type": "road",
+      "wheelSize": 28,
+      "ebike": false,
+      "year": 2025,
+      "description": "El cuadro de carretera escaladora más ligero del mundo. Diseñada para dominar en cualquier ascenso.",
+      "image": "/images/road.png"
+    },
+    {
+      "id": "10",
+      "model": "Stumpjumper EVO",
+      "brandId": "2",
+      "brand": "Specialized",
+      "price": 5499,
+      "type": "mountain",
+      "wheelSize": 29,
+      "ebike": false,
+      "year": 2024,
+      "description": "Preparada para el enduro más agresivo. Geometría ajustable y suspensión de largo recorrido.",
+      "image": "/images/mountain.png"
+    },
+    {
+      "id": "11",
+      "model": "Defy Advanced 1",
+      "brandId": "3",
+      "brand": "Giant",
+      "price": 2899,
+      "type": "road",
+      "wheelSize": 28,
+      "ebike": false,
+      "year": 2024,
+      "description": "Rendimiento de carbono a un precio accesible. La compañera perfecta para tu primer gran fondo.",
+      "image": "/images/road.png"
+    },
+    {
+      "id": "12",
+      "model": "Endurace CF 7",
+      "brandId": "4",
+      "brand": "Canyon",
+      "price": 1999,
+      "type": "road",
+      "wheelSize": 28,
+      "ebike": false,
+      "year": 2025,
+      "description": "Carbono de alta calidad, ergonomía de carretera y un precio imbatible. Relación calidad-precio excepcional.",
+      "image": "/images/road.png"
+    },
+    {
+      "id": "13",
+      "model": "Genius 920",
+      "brandId": "5",
+      "brand": "Scott",
+      "price": 3999,
+      "type": "mountain",
+      "wheelSize": 29,
+      "ebike": false,
+      "year": 2024,
+      "description": "Trail bike versátil con el sistema TwinLoc que cambia la geometría sobre la marcha.",
+      "image": "/images/mountain.png"
+    },
+    {
+      "id": "14",
+      "model": "Turbo Creo 2",
+      "brandId": "2",
+      "brand": "Specialized",
+      "price": 7500,
+      "type": "road",
+      "wheelSize": 28,
+      "ebike": true,
+      "year": 2025,
+      "description": "E-bike de carretera ultraligera. Motor silencioso y asistencia natural que no se nota hasta que la necesitas.",
+      "image": "/images/road.png"
+    },
+    {
+      "id": "15",
+      "model": "Revolt Advanced 2",
+      "brandId": "3",
+      "brand": "Giant",
+      "price": 2199,
+      "type": "gravel",
+      "wheelSize": 28,
+      "ebike": false,
+      "year": 2024,
+      "description": "Gravel todoterreno con cuadro de carbono y geometría equilibrada para cualquier aventura.",
+      "image": "/images/gravel.png"
+    },
+    {
+      "id": "16",
+      "model": "Pathlite:ON 5",
+      "brandId": "4",
+      "brand": "Canyon",
+      "price": 3299,
+      "type": "city",
+      "wheelSize": 28,
+      "ebike": true,
+      "year": 2024,
+      "description": "E-bike urbana con portaequipajes, guardabarros y luces integradas. Lista para la ciudad desde el primer día.",
+      "image": "/images/city.png"
+    },
+    {
+      "id": "17",
+      "model": "Addict RC 30",
+      "brandId": "5",
+      "brand": "Scott",
+      "price": 4799,
+      "type": "road",
+      "wheelSize": 28,
+      "ebike": false,
+      "year": 2025,
+      "description": "Cuadro aerodinámico ultraligero con integración total de cables. La bici de los profesionales.",
+      "image": "/images/road.png"
+    },
+    {
+      "id": "18",
+      "model": "Powerfly FS 5",
+      "brandId": "1",
+      "brand": "Trek",
+      "price": 4499,
+      "type": "mountain",
+      "wheelSize": 29,
+      "ebike": true,
+      "year": 2025,
+      "description": "E-MTB de doble suspensión con motor Bosch. Sube más, rueda más lejos, diviértete más.",
+      "image": "/images/mountain.png"
+    },
+    {
+      "model": "BIZI",
+      "brand": "Zaragoza",
+      "price": 1000,
+      "type": "city",
+      "ebike": true,
+      "description": "Bizi de Zaragoza bici dura y resistente.",
+      "image": "https://res.cloudinary.com/dkftr3pmb/image/upload/v1777838827/khd2oaw67gzakhfbklcs.png",
+      "year": 2026,
+      "brandId": "1",
+      "id": "6xo0j0l5FmQ"
+    },
+    {
+      "model": "X",
+      "brand": "Giant",
+      "price": 600,
+      "type": "city",
+      "ebike": false,
+      "description": "",
+      "image": "/images/city.png",
+      "year": 2026,
+      "brandId": "1",
+      "id": "WDMuJXCG5ig"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
